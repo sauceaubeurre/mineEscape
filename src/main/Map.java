@@ -19,14 +19,14 @@ public class Map {
 	}
 
 	public void renderBackground() {
-		this.tiledMap.render(0, 0/*, 0*/);
-		//this.tiledMap.render(0, 0, 1);
-		//this.tiledMap.render(0, 0, 2);
+		this.tiledMap.render(0, 0, 0);
+		this.tiledMap.render(0, 0, 1);
+		this.tiledMap.render(0, 0, 2);
 	
 	}
 
 	public void renderForeground() {
-		//this.tiledMap.render(0, 0, 3);
+		this.tiledMap.render(0, 0, 3);
 		//this.tiledMap.render(0, 0, 4);
 	}
 
