@@ -1,6 +1,5 @@
 package main;
 
-import org.newdawn.slick.ControllerListener;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -34,9 +33,8 @@ public class MapGameState extends BasicGameState {
 		this.map.init();
 		this.player.init();
 		this.hud.init();
-		//this.controller.setInput(container.getInput());
+		this.controller.setInput(container.getInput());
 		container.getInput().addKeyListener(controller);
-		container.getInput().addControllerListener(controller);
 	}
 
 	@Override
@@ -52,7 +50,7 @@ public class MapGameState extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-		//this.controller.update();
+		this.controller.update();
 		this.triggers.update();
 		this.player.update(delta);
 		this.camera.update(container);

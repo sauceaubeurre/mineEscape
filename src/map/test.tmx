@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" tilecount="21000" columns="140">
+  <image source="Tiles/tileset.png" width="2240" height="2400"/>
+ </tileset>
+ <tileset firstgid="21001" name="caves2" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tiles/caves2.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="22025" name="caves3" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tiles/caves3.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="23049" name="container" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tiles/container.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="24073" name="grass" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tiles/grass.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="25097" name="water" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tiles/water.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Base" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQkAAAwDoAV4/wjLOXgOBXtJVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVXVP4SfUztAnAAA
+  </data>
+ </layer>
+ <layer name="Walk 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RgQmAMAADwW4guP+wTlApBcsjd5AF8mMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAq677zFijR4seLXq06NGiR4sPW/Ro0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjxY9WvRo0aNFjz1vv3015vRo0aNFjxY9WvRo0aNFDwAA/uwBDSpPhUCcAAA=
+  </data>
+ </layer>
+ <layer name="Walk 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
+ <layer name="Walk 3" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
+ <layer name="Collision 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
+ <layer name="Collision 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3Z6W3DMAwGUCHJRD2W6LFEjzV7LNFjm2qAAAJr2qHt9wD+FCR8EcSEaQ0AAAAAAAAAAAAAAAAAAAAAAACgjqtDa9e9bnrdHi59mvWbmudbX/Pe66PX52C9z24skuc5d8fW7ns99Ho8zrvXHkTyPOerr/nu9dPrd7B+6l57EMnznKdTa8+9Xnq9nubdaw8iea5pr0vRI2vRI2vRI2up1iP3/n5m9cisHL2fObJy9H7myMqx2vu5Vlk57uE3xhLkCAAAsA6R+V+1mWu182SIzP+qzVyrnSdDZP5XbeZa7TwZIvO/ajPXaufJEJn/zTUr/G8fMLucxxb7QCXR+77FPlBJ9L5vsQ9UEr3v+sC83Pda3HcAAIjZ4n9P2ZbMyMxxbMmMzBzHlszIDGYsmtGU980MZiyakR5Qix6QJ+O7lB6QJ+Ot0QPyeGtq8dbM5w9jkdjfQJwAAA==
+  </data>
+ </layer>
+ <layer name="Collision 3" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
+ <layer name="Top 1" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3bwQmAMBAAwdRg/y3YoxVoRDAuOANp4PaTQG4MAAAAAAAAAAAAAAAAAAAAAAAAAAAAqvZt7eHayhnpMadHix4terTo0aJHy2xG7rtr3enBOnq06NGiR4seLXq06NGiR4seLXq06NGiR4seLXq06NGiR4seLXq06NGiR4seLXo898Wfcz1a9GjRo0WPFj1a9GjRo0WPFj3OvfUetLMBAPzVAWownedAnAAA
+  </data>
+ </layer>
+ <layer name="Top 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BMQEAAADCoPVP7WULoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBt5RKnmQJwAAA==
+  </data>
+ </layer>
+</map>

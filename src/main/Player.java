@@ -24,7 +24,7 @@ import org.newdawn.slick.SpriteSheet;
 public class Player {
 
 	private float dx = 0, dy = 0;
-	private float x = 300, y = 300;
+	private float x = 300, y = 350;
 	private int direction = 2;
 	private boolean onStair = false;
 	private boolean mining = false;
@@ -81,19 +81,6 @@ public class Player {
 			}
 		}
 	}
-	
-	private void updateDirection() {
-		if (dx > 0 && dx >= Math.abs(dy)) {
-			direction = 3;
-		} else if (dx < 0 && -dx >= Math.abs(dy)) {
-			direction = 1;
-		} else if (dy < 0) {
-			direction = 0;
-		} else if (dy > 0) {
-			direction = 2;
-		}
-	}
-	
 
 	private float getFuturX(int delta) {
 		return this.x + speed * delta * dx;
@@ -138,7 +125,17 @@ public class Player {
 	/**
 	 * mise à jour de la direction en fonction du vecteur de déplacement
 	 */
-	
+	private void updateDirection() {
+		if (dx > 0 && dx >= Math.abs(dy)) {
+			direction = 3;
+		} else if (dx < 0 && -dx >= Math.abs(dy)) {
+			direction = 1;
+		} else if (dy < 0) {
+			direction = 0;
+		} else if (dy > 0) {
+			direction = 2;
+		}
+	}
 
 	public void setDirection(int direction) {
 		switch (direction) {
