@@ -12,6 +12,7 @@ public class TriggerController {
 
 	private Map map;
 	private Player player;
+	
 
 	public TriggerController(Map map, Player player) {
 		this.map = map;
@@ -28,6 +29,8 @@ public class TriggerController {
 					this.player.setOnStair(true);
 				} else if ("change-map".equals(this.map.getObjectType(objectID))) {
 					this.changeMap(objectID);
+				} else if ("interaction".equals(this.map.getObjectType(objectID))) {
+					this.interaction(objectID);
 				}
 			}
 		}
@@ -45,6 +48,11 @@ public class TriggerController {
 				Float.toString(this.player.getX()))));
 		this.player.setY(Float.parseFloat(this.map.getObjectProperty(objectID, "dest-y",
 				Float.toString(this.player.getY()))));
+	}
+	
+	private void interaction(int objectID) {
+		//TODO
+		
 	}
 
 	private void changeMap(int objectID) throws SlickException {

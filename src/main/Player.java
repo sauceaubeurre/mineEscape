@@ -29,6 +29,7 @@ public class Player {
 	private boolean onStair = false;
 	private boolean mining = false;
 	private static final float speed = .15f;
+	private long timeLoader;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
