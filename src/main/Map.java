@@ -23,6 +23,11 @@ public class Map {
 	public void renderForeground() {
 		this.tiledMap.render(0, 0, 3);
 		//this.tiledMap.render(0, 0, 4);
+	
+	}
+	
+	public void setTiledId(int x,int y,int layerIndex,int tileid) {
+		this.tiledMap.setTileId(x, y, layerIndex, tileid);
 	}
 
 	public boolean isCollision(float x, float y) {

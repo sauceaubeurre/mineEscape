@@ -31,6 +31,7 @@ public class TriggerController {
 					this.changeMap(objectID);
 				} else if ("interaction".equals(this.map.getObjectType(objectID))) {
 					this.interaction(objectID);
+					
 				}
 			}
 		}
@@ -51,9 +52,11 @@ public class TriggerController {
 	}
 	
 	private void interaction(int objectID) {
-		//TODO
-		
+		map.setTiledId((int)this.map.getObjectX(objectID), (int)this.map.getObjectY(objectID), 0, 2242);
+		//player.setY(player.getY()-100);
+				
 	}
+	
 
 	private void changeMap(int objectID) throws SlickException {
 		this.teleport(objectID);
