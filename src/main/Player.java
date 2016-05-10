@@ -24,7 +24,7 @@ import org.newdawn.slick.SpriteSheet;
 public class Player {
 
 	private float dx = 0, dy = 0;
-	private float x = 300, y = 300;
+	private float x = 300, y = 350;
 	private int direction = 2;
 	private boolean onStair = false;
 	private boolean mining = false;

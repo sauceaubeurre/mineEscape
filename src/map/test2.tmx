@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="23">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="27">
  <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" tilecount="21000" columns="140">
   <image source="Tiles/tileset.png" width="2240" height="2400"/>
  </tileset>
@@ -46,11 +46,11 @@
    H4sIAAAAAAAAC+2WMQ6DMAxFc4KqLD0AM2uvAAvn8P2P0AFFoNSJ7MROqvKf5AFkf9sfIggBAAAAAL/Ik0J4O8ZEbfPNgvqNjkhzJbWSnBILUz/TGdy1pjenr4HrkZunVHutSe+3sBR6WMxn6V9uPsnzHemf5HzEnBicfg25/STnYdT5jboW83n5J8kd6Z+kVy//NKGdr6d/Nb17vn81tXfw71/fvx76rft563P7pd9Qa30Nu7N/a6P+i77/PSzj4bw/AABwfABtVUBrABkAAA==
   </data>
  </layer>
- <objectgroup name="trigger">
-  <object id="21" name="maison_1" type="teleport" x="447.333" y="272" width="16" height="36">
+ <objectgroup name="trigger" width ="40" height="40">
+  <object id="1" name="e-m" type="teleport" x="443" y="265" width="21" height="51">
    <properties>
     <property name="dest-x" type="int" value="300"/>
-    <property name="dest-y" type="int" value="350"/>
+    <property name="dest-y" type="int" value="310"/>
    </properties>
   </object>
  </objectgroup>
