@@ -26,7 +26,7 @@ public class StateGame extends StateBasedGame {
 	}
 
 	public StateGame() {
-		super("CaveEscape");
+		super("mineEscape");
 	}
 
 	/**
