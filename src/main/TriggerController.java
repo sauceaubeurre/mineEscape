@@ -52,8 +52,22 @@ public class TriggerController {
 	}
 	
 	private void interaction(int objectID) {
-		map.setTiledId((int)this.map.getObjectX(objectID), (int)this.map.getObjectY(objectID), 0, 2242);
-		//player.setY(player.getY()-100);
+		if(player.isMining() == true){
+			if(player.getDirection() == 0){
+				player.setY(player.getY()-0.005f);
+			}else if(player.getDirection() == 1){
+				player.setX(player.getX()-0.005f);
+			}else if(player.getDirection() == 2){
+				player.setY(player.getY()+0.005f);
+			}else {
+				player.setX(player.getX()+0.005f);
+			}
+			//player.setX(player.getX()+(0.1f/**player.getDx()*/));
+		}
+		else{
+			player.stopMoving();
+		}
+		
 				
 	}
 	
