@@ -21,11 +21,12 @@ public class MapGameState extends BasicGameState {
 	private GameContainer container;
 	private Map map = new Map();
 	private Player player = new Player(map);
+	private Item item = new Item(map);
 	private TriggerController triggers = new TriggerController(map, player);
 	private Camera camera = new Camera(player);
 	private PlayerController controller = new PlayerController(player);
 	private Hud hud = new Hud();
-	private Ennemy ennemy = new Ennemy(map);
+
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.container = container;
@@ -33,8 +34,8 @@ public class MapGameState extends BasicGameState {
 		background.loop();
 		this.map.init();
 		this.player.init();
+		this.item.init();
 		this.hud.init();
-		this.ennemy.init();
 		
 		//this.controller.setInput(container.getInput());
 		container.getInput().addKeyListener(controller);
@@ -46,10 +47,10 @@ public class MapGameState extends BasicGameState {
 			throws SlickException {
 		this.camera.place(container, g);
 		this.map.renderBackground();
+		this.item.render(g);
 		this.player.render(g);
 		this.map.renderForeground();
 		this.hud.render(g);
-		this.ennemy.render(g);
 	}
 
 	@Override
