@@ -62,8 +62,8 @@ public class Player {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(new Color(0, 0, 0, .5f));
-		g.fillOval((int) x - 12, (int) y - 5, 25, 14);
+		//g.setColor(new Color(0, 0, 0, .5f));
+		//g.fillOval((int) x - 12, (int) y - 5, 25, 14);
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0) + (mining ? 8 : 0)  ], (int) x - 16, (int) y - 30);
 		}
 

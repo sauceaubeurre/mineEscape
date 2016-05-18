@@ -26,8 +26,40 @@ public class Item {
 		image[0] = spriteSheet.getSprite(4, 0);
 	}
 	
-	private boolean interaction(Player player){
+	private boolean isInHitbox(Player player){
 		if(player.getX() >= this.x && player.getX() <= (this.x + 32) && player.getY() >= this.y && player.getY() <= (this.y + 32)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	private boolean isTop(Player player){
+		if(player.getY() >= (this.y - 1) && player.getY() <= (this.y + 5)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	private boolean isLeft(Player player){
+		if(player.getX() >= (this.x - 1) && player.getX() <= (this.x + 5)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	private boolean isRight(Player player){
+		if(player.getX() <= (this.x + 32) && player.getX() >= (this.x + 27)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	private boolean isBot(Player player){
+		if(player.getY() <= (this.y + 32) && player.getY() >= (this.y + 27)){
 			return true;
 		}else{
 			return false;
@@ -39,17 +71,17 @@ public class Item {
 	}
 	
 	public void update(Player player, int delta){
-		if(this.interaction(player) == true){
+		if(this.isInHitbox(player) == true){
 			if(time % 1000 == 0 && hp != 0 && player.isMining() == true){
 				hp--;
 			}else if(player.isMoving() == true && hp != 0){
-				if(this.getX()+32 - player.getX() > 0 && player.getDx() == 1){
+				if(this.isLeft(player) == true && player.getDx() == 1){
 					player.setDx(0);
-				}else if(this.getX() - player.getX() < 0 && player.getDx() == -1){
+				}if(this.isRight(player) && player.getDx() == -1){
 					player.setDx(0);
-				}else if(this.getY()+32 - player.getY() > 0 && player.getDy() == 1){
+				}if(this.isTop(player) && player.getDy() == 1){
 					player.setDy(0);
-				}else if(this.getY() - player.getY() < 0 && player.getDy() == -1){
+				}if(this.isBot(player) && player.getDy() == -1){
 					player.setDy(0);
 				}
 				time = 0;
