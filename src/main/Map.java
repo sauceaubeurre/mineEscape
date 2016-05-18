@@ -10,6 +10,7 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
+	private static final int tileSize = 16; 
 
 	public void init() throws SlickException {
 		this.tiledMap = new TiledMap("map/test2.tmx");
