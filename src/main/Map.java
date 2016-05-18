@@ -4,9 +4,11 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
+import org.newdawn.slick.util.pathfinding.PathFindingContext;
+import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 
-public class Map {
+public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
 
 	public void init() throws SlickException {
@@ -72,6 +74,36 @@ public class Map {
 
 	public String getObjectProperty(int objectID, String propertyName, String def) {
 		return this.tiledMap.getObjectProperty(0, objectID, propertyName, def);
+	}
+
+	@Override
+	public int getWidthInTiles() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getHeightInTiles() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void pathFinderVisited(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean blocked(PathFindingContext context, int tx, int ty) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public float getCost(PathFindingContext context, int tx, int ty) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
