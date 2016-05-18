@@ -29,7 +29,6 @@ public class Player {
 	private boolean onStair = false;
 	private boolean mining = false;
 	private static final float speed = .15f;
-	private long timeLoader;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
@@ -63,8 +62,8 @@ public class Player {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(new Color(0, 0, 0, .5f));
-		g.fillOval((int) x - 12, (int) y - 5, 25, 14);
+		//g.setColor(new Color(0, 0, 0, .5f));
+		//g.fillOval((int) x - 12, (int) y - 5, 25, 14);
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0) + (mining ? 8 : 0)  ], (int) x - 16, (int) y - 30);
 		}
 
@@ -124,7 +123,7 @@ public class Player {
 		this.y = y;
 	}
 	
-	public static float getSpeed() {
+	public float getSpeed() {
 		return speed;
 	}
 	
@@ -202,5 +201,4 @@ public class Player {
 	public float getDy() {
 		return dy;
 	}
-
 }

@@ -29,9 +29,6 @@ public class TriggerController {
 					this.player.setOnStair(true);
 				} else if ("change-map".equals(this.map.getObjectType(objectID))) {
 					this.changeMap(objectID);
-				} else if ("interaction".equals(this.map.getObjectType(objectID))) {
-					this.interaction(objectID);
-					
 				}
 			}
 		}
@@ -50,27 +47,6 @@ public class TriggerController {
 		this.player.setY(Float.parseFloat(this.map.getObjectProperty(objectID, "dest-y",
 				Float.toString(this.player.getY()))));
 	}
-	
-	private void interaction(int objectID) {
-		if(player.isMining() == true){
-			if(player.getDirection() == 0){
-				player.setY(player.getY()-0.005f);
-			}else if(player.getDirection() == 1){
-				player.setX(player.getX()-0.005f);
-			}else if(player.getDirection() == 2){
-				player.setY(player.getY()+0.005f);
-			}else {
-				player.setX(player.getX()+0.005f);
-			}
-			//player.setX(player.getX()+(0.1f/**player.getDx()*/));
-		}
-		else{
-			player.stopMoving();
-		}
-		
-				
-	}
-	
 
 	private void changeMap(int objectID) throws SlickException {
 		this.teleport(objectID);

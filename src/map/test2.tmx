@@ -43,7 +43,7 @@
  </layer>
  <layer name="logic" width="40" height="40" visible="0">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WMQ6DMAxFc4KqLD0AM2uvAAvn8P2P0AFFoNSJ7MROqvKf5AFkf9sfIggBAAAAAL/Ik0J4O8ZEbfPNgvqNjkhzJbWSnBILUz/TGdy1pjenr4HrkZunVHutSe+3sBR6WMxn6V9uPsnzHemf5HzEnBicfg25/STnYdT5jboW83n5J8kd6Z+kVy//NKGdr6d/Nb17vn81tXfw71/fvx76rft563P7pd9Qa30Nu7N/a6P+i77/PSzj4bw/AABwfABtVUBrABkAAA==
+   H4sIAAAAAAAAC+2WMQrDMAxFfYKQLDmA5665QrPkHLr/EToUE3BlI9mSXdr/QENA+pJ+bJIQAAAAAPCNrBTC4Rgb9c0XBfUnvSPPldRKcmo8mPpId3DPmt6cvoa8x0rleWq1sVBn6V/ew2I+S/9K80ne70z/JPcj5aTg9Fvg9tuF92HW/U26FvN5+CfNnemfpNco/zShnW+kfy29R56/ltp/8O9Xz98I/d79vPW5/fJvqLW+hsvZv2en/k6f/x6WsTjvDwAAHC97kjSPABkAAA==
   </data>
  </layer>
  <objectgroup name="trigger" width="40" height="40">
@@ -53,6 +53,5 @@
     <property name="dest-y" type="int" value="310"/>
    </properties>
   </object>
-  <object id="2" name="test" type="interaction" x="335" y="431" width="48" height="17"/>
  </objectgroup>
 </map>

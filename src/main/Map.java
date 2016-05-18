@@ -17,7 +17,6 @@ public class Map {
 		this.tiledMap.render(0, 0, 0);
 		this.tiledMap.render(0, 0, 1);
 		this.tiledMap.render(0, 0, 2);
-	
 	}
 
 	public void renderForeground() {
