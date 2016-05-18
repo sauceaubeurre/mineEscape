@@ -21,6 +21,7 @@ public class MapGameState extends BasicGameState {
 	private GameContainer container;
 	private Map map = new Map();
 	private Player player = new Player(map);
+	private Ennemy ennemy = new Ennemy(map);
 	private Item item = new Item(22*16, 28*16);
 	private TriggerController triggers = new TriggerController(map, player);
 	private Camera camera = new Camera(player);
@@ -34,6 +35,7 @@ public class MapGameState extends BasicGameState {
 		background.loop();
 		this.map.init();
 		this.player.init();
+		this.ennemy.init();
 		this.item.init();
 		this.hud.init();
 		
@@ -48,6 +50,7 @@ public class MapGameState extends BasicGameState {
 		this.map.renderBackground();
 		this.item.render(g, player);
 		this.player.render(g);
+		this.ennemy.render(g);
 		this.map.renderForeground();
 		this.hud.render(g);
 	}
