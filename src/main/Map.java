@@ -10,12 +10,32 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
-	private static final int tileSize = 16; 
+	private static final int tileSize = 16;
+	private int[] blockedTileId = {4};
+	private boolean [][] visited;
+	private boolean [][] blocked;
+	
 
 	public void init() throws SlickException {
 		this.tiledMap = new TiledMap("map/test2.tmx");
+		blocked = new boolean[tiledMap.getWidth()][tiledMap.getHeight()];
+		visited = new boolean[tiledMap.getWidth()][tiledMap.getHeight()];
+	
+		for (int x = 0; x < tiledMap.getWidth(); x++){
+            for (int y = 0; y < tiledMap.getHeight(); y++){  	
+           	 int tileID = tiledMap.getTileId(x, y, blockedTileId[0]);
+                String value = tiledMap.getTileProperty(tileID, "blocked", "false");
+                if ("true".equals(value)){
+               	 	blocked[x][y] = true;
+                }
+            }
+        }
+	
 	}
 
+	
+	
+	
 	public void renderBackground() {
 		this.tiledMap.render(0, 0, 0);
 		this.tiledMap.render(0, 0, 1);
@@ -79,32 +99,47 @@ public class Map implements TileBasedMap {
 
 	@Override
 	public int getWidthInTiles() {
-		// TODO Auto-generated method stub
-		return 0;
+		return tiledMap.getWidth();
 	}
 
 	@Override
 	public int getHeightInTiles() {
-		// TODO Auto-generated method stub
-		return 0;
+		 return tiledMap.getHeight();
 	}
 
 	@Override
 	public void pathFinderVisited(int x, int y) {
-		// TODO Auto-generated method stub
+		visited[x][y] = true;
 		
 	}
 
 	@Override
 	public boolean blocked(PathFindingContext context, int tx, int ty) {
-		// TODO Auto-generated method stub
-		return false;
+		return tiledMap.getTileId(tx, ty, blockedTileId[0]) != 0;
 	}
 
 	@Override
 	public float getCost(PathFindingContext context, int tx, int ty) {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1.0f;
 	}
+	
+	public void clearVisited() {
+		for (int x = 0;x < tiledMap.getWidth();x++) {
+			for (int y = 0; y < tiledMap.getHeight();y++) {
+				visited[x][y] = false;
+			}
+		}
+	}
+	
+	 public boolean isBlocked(float x, float y){  
+	        try{
+	        	int xBlock = (int)x / tileSize;
+	            int yBlock = (int)y / tileSize;
+	            return blocked[xBlock][yBlock];
+	         }catch (ArrayIndexOutOfBoundsException e){
+	            e.printStackTrace();
+	            return blocked[0][0];
+	         }
+	    }
 
 }
