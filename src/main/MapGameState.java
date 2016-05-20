@@ -58,6 +58,7 @@ public class MapGameState extends BasicGameState {
 		this.ennemy.render(g);
 		this.map.renderForeground();
 		this.hud.render(g);
+		this.aStar.render(map, g);
 		
 		
 
@@ -71,6 +72,7 @@ public class MapGameState extends BasicGameState {
 		this.triggers.update();
 		this.item.update(player, delta);
 		this.player.update(delta);
+		this.ennemy.update(delta);
 		this.camera.update(container);
 		this.aStar.update(map, player, ennemy, delta);
 		

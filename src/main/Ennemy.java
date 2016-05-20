@@ -8,63 +8,10 @@ import org.newdawn.slick.SpriteSheet;
 
 public class Ennemy {
 	
-	public float getDx() {
-		return dx;
-	}
-	public void setDx(float dx) {
-		this.dx = dx;
-	}
-	public float getDy() {
-		return dy;
-	}
-	public void setDy(float dy) {
-		this.dy = dy;
-	}
-	public float getX() {
-		return x;
-	}
-	public void setX(float x) {
-		this.x = x;
-	}
-	public float getY() {
-		return y;
-	}
-	public void setY(float y) {
-		this.y = y;
-	}
-	public int getDirection() {
-		return direction;
-	}
-	public void setDirection(int direction) {
-		this.direction = direction;
-	}
-	public long getTimeLoader() {
-		return timeLoader;
-	}
-	public void setTimeLoader(long timeLoader) {
-		this.timeLoader = timeLoader;
-	}
-	public Animation[] getAnimations() {
-		return animations;
-	}
-	public void setAnimations(Animation[] animations) {
-		this.animations = animations;
-	}
-	public Map getMap() {
-		return map;
-	}
-	public void setMap(Map map) {
-		this.map = map;
-	}
-	public static float getSpeed() {
-		return speed;
-	}
-
 	private float dx = 0, dy = 0;
 	private float x = 500, y = 450;
 	private int direction = 2;
-	private static final float speed = .15f;
-	private long timeLoader;
+	private static final float speed = .05f;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
@@ -105,4 +52,74 @@ public class Ennemy {
 		g.fillOval((int) x - 12, (int) y - 5, 25, 14);
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0)], (int) x - 16, (int) y - 30);
 		}
+	
+	public void move(int delta){
+		x = x + speed * delta * dx;
+		y = y + speed * delta * dy;
+	}
+	
+	public void update(int delta) {
+		if (this.isMoving()) {
+			updateDirection();
+		}
+	}
+	
+	private void updateDirection() {
+		if (dx > 0 && dx >= Math.abs(dy)) {
+			direction = 3;
+		} else if (dx < 0 && -dx >= Math.abs(dy)) {
+			direction = 1;
+		} else if (dy < 0) {
+			direction = 0;
+		} else if (dy > 0) {
+			direction = 2;
+		}
+	}
+	
+	public float getDx() {
+		return dx;
+	}
+	public void setDx(float dx) {
+		this.dx = dx;
+	}
+	public float getDy() {
+		return dy;
+	}
+	public void setDy(float dy) {
+		this.dy = dy;
+	}
+	public float getX() {
+		return x;
+	}
+	public void setX(float x) {
+		this.x = x;
+	}
+	public float getY() {
+		return y;
+	}
+	public void setY(float y) {
+		this.y = y;
+	}
+	public int getDirection() {
+		return direction;
+	}
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+	
+	public Animation[] getAnimations() {
+		return animations;
+	}
+	public void setAnimations(Animation[] animations) {
+		this.animations = animations;
+	}
+	public Map getMap() {
+		return map;
+	}
+	public void setMap(Map map) {
+		this.map = map;
+	}
+	public static float getSpeed() {
+		return speed;
+	}
 }
