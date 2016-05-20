@@ -8,6 +8,58 @@ import org.newdawn.slick.SpriteSheet;
 
 public class Ennemy {
 	
+	public float getDx() {
+		return dx;
+	}
+	public void setDx(float dx) {
+		this.dx = dx;
+	}
+	public float getDy() {
+		return dy;
+	}
+	public void setDy(float dy) {
+		this.dy = dy;
+	}
+	public float getX() {
+		return x;
+	}
+	public void setX(float x) {
+		this.x = x;
+	}
+	public float getY() {
+		return y;
+	}
+	public void setY(float y) {
+		this.y = y;
+	}
+	public int getDirection() {
+		return direction;
+	}
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+	public long getTimeLoader() {
+		return timeLoader;
+	}
+	public void setTimeLoader(long timeLoader) {
+		this.timeLoader = timeLoader;
+	}
+	public Animation[] getAnimations() {
+		return animations;
+	}
+	public void setAnimations(Animation[] animations) {
+		this.animations = animations;
+	}
+	public Map getMap() {
+		return map;
+	}
+	public void setMap(Map map) {
+		this.map = map;
+	}
+	public static float getSpeed() {
+		return speed;
+	}
+
 	private float dx = 0, dy = 0;
 	private float x = 500, y = 450;
 	private int direction = 2;

@@ -10,8 +10,68 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 
 public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
-	private static final int tileSize = 16;
+	private  final int tileSize = 16;
 	private int[] blockedTileId = {4};
+	public TiledMap getTiledMap() {
+		return tiledMap;
+	}
+
+
+
+
+	public void setTiledMap(TiledMap tiledMap) {
+		this.tiledMap = tiledMap;
+	}
+
+
+
+
+	public int[] getBlockedTileId() {
+		return blockedTileId;
+	}
+
+
+
+
+	public void setBlockedTileId(int[] blockedTileId) {
+		this.blockedTileId = blockedTileId;
+	}
+
+
+
+
+	public boolean[][] getVisited() {
+		return visited;
+	}
+
+
+
+
+	public void setVisited(boolean[][] visited) {
+		this.visited = visited;
+	}
+
+
+
+
+	public boolean[][] getBlocked() {
+		return blocked;
+	}
+
+
+
+
+	public void setBlocked(boolean[][] blocked) {
+		this.blocked = blocked;
+	}
+
+
+
+
+	public int getTilesize() {
+		return tileSize;
+	}
+
 	private boolean [][] visited;
 	private boolean [][] blocked;
 	
