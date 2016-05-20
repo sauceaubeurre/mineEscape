@@ -29,15 +29,8 @@ public class MapGameState extends BasicGameState {
 	private Camera camera = new Camera(player);
 	private PlayerController controller = new PlayerController(player);
 	private Hud hud = new Hud();
+	private AStar aStar = new AStar();
 	
-	private Path path;
-	private AStarPathFinder pathFinder;
-	private float startLastX;
-	private float startLastY;
-	private float endLastX;
-	private float endLastY;
-	private int time = 0;
-	private int i = -1;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -49,16 +42,11 @@ public class MapGameState extends BasicGameState {
 		this.ennemy.init();
 		this.item.init();
 		this.hud.init();
-		
+		this.aStar.init(map, player, ennemy);
 		//this.controller.setInput(container.getInput());
 		container.getInput().addKeyListener(controller);
 		container.getInput().addControllerListener(controller);
 		
-		pathFinder = new AStarPathFinder(map, 100, true);	//Initialise A* object
-		startLastX = player.getX()/map.getTilesize();
-		startLastY = player.getY()/map.getTilesize();
-		endLastX = ennemy.getX()/map.getTilesize();
-		endLastY = ennemy.getY()/map.getTilesize();
 	}
 
 	@Override
@@ -71,18 +59,6 @@ public class MapGameState extends BasicGameState {
 		this.map.renderForeground();
 		this.hud.render(g);
 		
-		//draw path
-		for(int x = 0; x < map.getWidthInTiles(); x++) {
-			for(int y = 0; y < map.getHeightInTiles(); y++) {	
-				if(path != null) {
-					if(path.contains(x, y)) {
-						g.setColor(org.newdawn.slick.Color.black);
-						g.fillRect((x*map.getTilesize()), (y*map.getTilesize()),7,7);
-						g.setColor(org.newdawn.slick.Color.white);
-					}	
-				}
-			}
-		}
 		
 
 		
@@ -96,39 +72,8 @@ public class MapGameState extends BasicGameState {
 		this.item.update(player, delta);
 		this.player.update(delta);
 		this.camera.update(container);
+		this.aStar.update(map, player, ennemy, delta);
 		
-		//check if agent has moved
-				if (startLastX != player.getX()/map.getTilesize()  || startLastY != player.getY()/map.getTilesize() 
-						|| endLastX != ennemy.getX()/map.getTilesize() || endLastY != ennemy.getY()/map.getTilesize()) {
-					
-					//find new path from start agent to end agent
-					path = pathFinder.findPath(null, (int)player.getX()/map.getTilesize(), (int)player.getY()/map.getTilesize(), (int)ennemy.getX()/map.getTilesize(), (int)ennemy.getY()/map.getTilesize());
-					
-					//print path distance
-					System.out.println("Path updated "+ pathFinder.getSearchDistance());
-					
-					//update agent last positions
-					startLastX = player.getX()/map.getTilesize();
-					startLastY = player.getY()/map.getTilesize();
-					endLastX = ennemy.getX()/map.getTilesize();
-					endLastY = ennemy.getY()/map.getTilesize();
-				}
-				
-				//move the ennemy
-				/*if(path != null && time % 1000 == 0){
-					if(i == -1){
-						i = path.getLength() -1;
-					}
-					else if( i > 0 ){
-						ennemy.setX(path.getX(i)*map.getTilesize());
-						ennemy.setY(path.getY(i)*map.getTilesize());
-						i--;
-					}
-					else{
-						i = -1;
-					}
-				}*/
-				time += delta;
 	}
 
 	@Override
