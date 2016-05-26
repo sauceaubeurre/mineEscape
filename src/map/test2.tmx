@@ -23,7 +23,7 @@
  </tileset>
  <layer name="background" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3OMQ0AMAgAME6O+ZeAEYyhYgkhPfq3XkQBACt1/uPn5+fn5+fn5+fn5wdw2QCANlopABkAAA==
+   H4sIAAAAAAAAC+3QMQ0AIAwAwY4MaEAe0moEY6ggacoNt38+Z0QCACWd8Y4+ffr06fu7b+3afdX/6dOnT1/HPoBuLmmDDNgAGQAA
   </data>
  </layer>
  <layer name="background2" width="40" height="40">
@@ -41,9 +41,9 @@
    H4sIAAAAAAAAC+3OyQ3CUBAE0Zadku0kWJIADCTBEhlLEixJIBm400ekCWC+oJ5U95IAAMAvOzTS0Z3cucm+iUatNHYTN22zb6KLn67u5u4F/s06ae4Wru+yb6LH19NQ4B8A4L/1lbR0K7eusm+iwU9P93LvAv82tbR1O7evs28AAIg+gdzn4wAZAAA=
   </data>
  </layer>
- <layer name="logic" width="40" height="40" visible="0">
+ <layer name="logic" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WMQrDMAxFfYKQLDmA5665QrPkHLr/EToUE3BlI9mSXdr/QENA+pJ+bJIQAAAAAPCNrBTC4Rgb9c0XBfUnvSPPldRKcmo8mPpId3DPmt6cvoa8x0rleWq1sVBn6V/ew2I+S/9K80ne70z/JPcj5aTg9Fvg9tuF92HW/U26FvN5+CfNnemfpNco/zShnW+kfy29R56/ltp/8O9Xz98I/d79vPW5/fJvqLW+hsvZv2en/k6f/x6WsTjvDwAAHC97kjSPABkAAA==
+   H4sIAAAAAAAAC+2WMQ7DIAxFOUFFlxyAuWuvkC49h+9/hAwRquQYZMCGqv1P8hDJ/tg/WEkIAAAAAPhGIoXwdIw7jfWXFPUvOoPnamo1OTUeQn2iT0jPLWdL+i3wMyKV+6nVpkKdpX/8DIv+LP0r9ad5vyv90+xHzskh6fcgzbcp92HV/mZdi/48/NPmrvSPExV+juiXkHaiFq39zfKv9+yZ96+n9h/8+9X7N0N/dD5vfWk+/g211m/h7ezfPqi/0fXfwzJuzvMDAIDEAbBlJ5QAGQAA
   </data>
  </layer>
  <objectgroup name="trigger" width="40" height="40">

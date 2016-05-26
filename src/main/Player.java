@@ -1,30 +1,18 @@
-/**
- * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
- *
- * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
- * GCS d- s+:+ a C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
- */
+
 package main;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 
 
-/**
- * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
- * 
- * Représente le joueur
- * 
- * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
- *         GCS d- s+:+ a C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
- */
+
 public class Player {
 
 	private float dx = 0, dy = 0;
-	private float x = 300, y = 350;
+	private float x = 320, y = 488;
+	//private float x = 288, y = 2944;
 	private int direction = 2;
 	private boolean onStair = false;
 	private boolean mining = false;
@@ -62,8 +50,6 @@ public class Player {
 	}
 
 	public void render(Graphics g) {
-		//g.setColor(new Color(0, 0, 0, .5f));
-		//g.fillOval((int) x - 12, (int) y - 5, 25, 14);
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0) + (mining ? 8 : 0)  ], (int) x - 16, (int) y - 30);
 		}
 
@@ -135,9 +121,6 @@ public class Player {
 		this.mining = mining;
 	}
 
-	/**
-	 * mise à jour de la direction en fonction du vecteur de déplacement
-	 */
 	
 
 	public void setDirection(int direction) {

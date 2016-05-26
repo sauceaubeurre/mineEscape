@@ -1,7 +1,6 @@
 package main;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
@@ -9,9 +8,11 @@ import org.newdawn.slick.SpriteSheet;
 public class Ennemy {
 	
 	private float dx = 0, dy = 0;
-	private float x = 500, y = 450;
+	private float x = 488, y = 488;
+	//private float x = 560, y = 2848;
 	private int direction = 2;
 	private static final float speed = .05f;
+	private boolean onStair;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
@@ -48,20 +49,36 @@ public class Ennemy {
 	}
 
 	public void render(Graphics g) {
-		g.setColor(new Color(0, 0, 0, .5f));
-		g.fillOval((int) x - 12, (int) y - 5, 25, 14);
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0)], (int) x - 16, (int) y - 30);
 		}
 	
-	public void move(int delta){
-		x = x + speed * delta * dx;
-		y = y + speed * delta * dy;
-	}
+	
 	
 	public void update(int delta) {
 		if (this.isMoving()) {
 			updateDirection();
+			float futurX = getFuturX(delta);
+			float futurY = getFuturY(delta);
+			boolean collision = this.map.isCollision(futurX, futurY);
+			if (collision) {
+				stopMoving();
+			} else {
+				this.x = futurX;
+				this.y = futurY;
+			}
 		}
+	}
+	
+	private float getFuturX(int delta) {
+		return this.x + speed * delta * dx;
+	}
+
+	private float getFuturY(int delta) {
+		float futurY = this.y + speed * delta * dy;
+		if (this.onStair) {
+			futurY = futurY - speed * dx * delta;
+		}
+		return futurY;
 	}
 	
 	private void updateDirection() {
@@ -103,8 +120,34 @@ public class Ennemy {
 	public int getDirection() {
 		return direction;
 	}
-	public void setDirection(int direction) {
-		this.direction = direction;
+	public void setDirection(int px, int py) {
+		//set ennemy Dx
+				if(x > px + 5){
+					dx = -1;
+				}
+				else if(x < px - 5){
+					dx = 1;
+				}
+				else{
+					dx = 0;
+				}
+				
+				//set ennemy Dy
+				if(y > py + 5){
+					dy = -1;
+				}
+				else if(y < py - 5){
+					dy = 1;
+				}
+				else{
+					dy = 0;
+				}
+	
+	}
+	
+	public void stopMoving() {
+		dx = 0;
+		dy = 0;
 	}
 	
 	public Animation[] getAnimations() {
@@ -122,4 +165,5 @@ public class Ennemy {
 	public static float getSpeed() {
 		return speed;
 	}
+	
 }

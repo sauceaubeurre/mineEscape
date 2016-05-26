@@ -11,7 +11,7 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
 	private  final int tileSize = 16;
-	private int[] blockedTileId = {4};
+	private int[] blockedTileId = {4,5};
 	public TiledMap getTiledMap() {
 		return tiledMap;
 	}
@@ -78,15 +78,19 @@ public class Map implements TileBasedMap {
 
 	public void init() throws SlickException {
 		this.tiledMap = new TiledMap("map/test2.tmx");
+		//this.tiledMap = new TiledMap("map/maptest.tmx");
 		blocked = new boolean[tiledMap.getWidth()][tiledMap.getHeight()];
 		visited = new boolean[tiledMap.getWidth()][tiledMap.getHeight()];
 	
 		for (int x = 0; x < tiledMap.getWidth(); x++){
-            for (int y = 0; y < tiledMap.getHeight(); y++){  	
-           	 int tileID = tiledMap.getTileId(x, y, blockedTileId[0]);
-                String value = tiledMap.getTileProperty(tileID, "blocked", "false");
-                if ("true".equals(value)){
-               	 	blocked[x][y] = true;
+            for (int y = 0; y < tiledMap.getHeight(); y++){
+            	for(int i = 0; i < 1 ; i++){
+            		int tileID = tiledMap.getTileId(x, y, blockedTileId[i]);
+                    String value = tiledMap.getTileProperty(tileID, "blocked", "false");
+                    if ("true".equals(value)){
+                   	 	blocked[x][y] = true;
+            	}
+           	 
                 }
             }
         }
@@ -104,7 +108,7 @@ public class Map implements TileBasedMap {
 
 	public void renderForeground() {
 		this.tiledMap.render(0, 0, 3);
-		//this.tiledMap.render(0, 0, 4);
+		this.tiledMap.render(0, 0, 4);
 	
 	}
 	
