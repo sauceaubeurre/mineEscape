@@ -8,8 +8,8 @@ import org.newdawn.slick.SpriteSheet;
 public class Ennemy {
 	
 	private float dx = 0, dy = 0;
-	private float x = 488, y = 488;
-	//private float x = 560, y = 2848;
+	//private float x = 488, y = 488;
+	private float x = 560, y = 2848;
 	private int direction = 2;
 	private static final float speed = .05f;
 	private boolean onStair;
