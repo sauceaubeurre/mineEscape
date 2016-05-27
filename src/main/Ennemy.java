@@ -8,8 +8,7 @@ import org.newdawn.slick.SpriteSheet;
 public class Ennemy {
 	
 	private float dx = 0, dy = 0;
-	//private float x = 488, y = 488;
-	private float x = 25*16, y = 100*16;
+	private float x , y;
 	private int direction = 2;
 	private static final float speed = .05f;
 	private boolean onStair;
@@ -17,8 +16,10 @@ public class Ennemy {
 	private Animation[] animations = new Animation[12];
 	private Map map;
 
-	public Ennemy(Map map) {
+	public Ennemy(Map map, float x, float y) {
 		this.map = map;
+		this.x = x;
+		this.y = y;
 	}
 	public void init() throws SlickException {
 		SpriteSheet spriteSheet = new SpriteSheet("sprites/character2.png", 32, 32);

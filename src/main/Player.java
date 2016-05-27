@@ -12,7 +12,7 @@ public class Player {
 
 	private float dx = 0, dy = 0;
 	//private float x = 320, y = 488;
-	private float x = 20*16, y = 100*16;
+	private float x = 11*16, y = 107*16;
 	private int direction = 2;
 	private boolean onStair = false;
 	private boolean mining = false;
