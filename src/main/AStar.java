@@ -27,7 +27,7 @@ public class AStar {
 				if(pathIndex < path.getLength()){
 					
 					ennemy.setDirection(path.getX(pathIndex)*map.getTilesize(), path.getY(pathIndex)*map.getTilesize());
-					System.out.println("move");
+					//System.out.println("move");
 					
 					if(stepOver(map, ennemy) == true){
 						pathIndex++;
@@ -54,7 +54,7 @@ public class AStar {
     				//find new path from start agent to end agent
     				path = pathFinder.findPath(null, (int)ennemy.getX()/map.getTilesize(), (int)ennemy.getY()/map.getTilesize(), (int)player.getX()/map.getTilesize(), (int)player.getY()/map.getTilesize());
     				pathIndex = 0;    				//print path distance
-    				System.out.println("Path updated "+ pathFinder.getSearchDistance());
+    				//System.out.println("Path updated "+ pathFinder.getSearchDistance());
     				
     				//update agent last positions
     				endLastX = player.getX()/map.getTilesize();

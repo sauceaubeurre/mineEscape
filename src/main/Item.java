@@ -32,8 +32,11 @@ public class Item {
 	
 	public void update(Player player, int delta){
 		if(player.isInHitbox(x, y) == true){
-			if(time % 1000 == 0 && hp != 0 && player.isMining() == true){
+			System.out.println(time);
+			if((time - 1000) > 0 && hp != 0 && player.isMining() == true){
+				System.out.println("hit rock");
 				hp--;
+				time = 0;
 			}else if(player.isMoving() == true && hp != 0){
 				if(player.isLeft(x, y) == true && player.getDx() == 1){
 					player.setDx(0);

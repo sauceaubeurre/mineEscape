@@ -17,7 +17,8 @@ public class MapGameState extends BasicGameState {
 	private Map map = new Map();
 	private Player player = new Player(map);
 	private Ennemy ennemy = new Ennemy(map);
-	private Item item = new Item(320, 2944);
+	//private Item item = new Item(22*16, 44*16);
+	private Item item = new Item(20*16, 102*16);
 	private TriggerController triggers = new TriggerController(map, player);
 	private Camera camera = new Camera(player);
 	private PlayerController controller = new PlayerController(player);
