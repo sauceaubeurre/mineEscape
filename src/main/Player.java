@@ -92,6 +92,46 @@ public class Player {
 		}
 		return futurY;
 	}
+	
+	public boolean isInHitbox(float x, float y){
+		if(this.x >= x && this.x <= (x + 32) && this.y >= y && this.y <= (y + 32)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean isTop(float x, float y){
+		if(this.y >= (y - 1) && this.y <= (y + 5)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean isLeft(float x, float y){
+		if(this.x >= (x - 1) && this.x <= (x + 5)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean isRight(float x, float y){
+		if(this.x <= (x + 32) && this.x >= (x + 27)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean isBot(float x, float y){
+		if(this.y <= (y + 32) && this.y >= (y + 27)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	public float getX() {
 		return x;
