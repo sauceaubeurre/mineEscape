@@ -11,7 +11,7 @@ import org.newdawn.slick.util.pathfinding.TileBasedMap;
 public class Map implements TileBasedMap {
 	private TiledMap tiledMap;
 	private  final int tileSize = 16;
-	private int[] blockedTileId = {8,5};
+	private int blockedTileId = 9;
 	public TiledMap getTiledMap() {
 		return tiledMap;
 	}
@@ -26,14 +26,14 @@ public class Map implements TileBasedMap {
 
 
 
-	public int[] getBlockedTileId() {
+	public int getBlockedTileId() {
 		return blockedTileId;
 	}
 
 
 
 
-	public void setBlockedTileId(int[] blockedTileId) {
+	public void setBlockedTileId(int blockedTileId) {
 		this.blockedTileId = blockedTileId;
 	}
 
@@ -84,14 +84,13 @@ public class Map implements TileBasedMap {
 	
 		for (int x = 0; x < tiledMap.getWidth(); x++){
             for (int y = 0; y < tiledMap.getHeight(); y++){
-            	for(int i = 0; i < 1 ; i++){
-            		int tileID = tiledMap.getTileId(x, y, blockedTileId[i]);
+            		int tileID = tiledMap.getTileId(x, y, blockedTileId);
                     String value = tiledMap.getTileProperty(tileID, "blocked", "false");
                     if ("true".equals(value)){
                    	 	blocked[x][y] = true;
             	}
            	 
-                }
+                
             }
         }
 	
@@ -182,7 +181,7 @@ public class Map implements TileBasedMap {
 
 	@Override
 	public boolean blocked(PathFindingContext context, int tx, int ty) {
-		return tiledMap.getTileId(tx, ty, blockedTileId[0]) != 0;
+		return tiledMap.getTileId(tx, ty, blockedTileId) != 0;
 	}
 
 	@Override

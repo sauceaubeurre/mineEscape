@@ -13,7 +13,7 @@ public class AStar {
 	private int pathIndex;
 	
     public void init(Map map, Player player, Ennemy ennemy){
-    	pathFinder = new AStarPathFinder(map, 100, false);	//Initialise A* object
+    	pathFinder = new AStarPathFinder(map, 100, true);	//Initialise A* object
 		endLastX = player.getX()/map.getTilesize();
 		endLastY = player.getY()/map.getTilesize();
     }
