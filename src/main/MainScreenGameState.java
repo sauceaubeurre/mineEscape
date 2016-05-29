@@ -50,8 +50,16 @@ public class MainScreenGameState extends BasicGameState {
 			case 2:
 				g.setColor(black);
 				g.drawRect(0, 0, container.getWidth(), container.getHeight());
+				g.setColor(lightGray);
+				g.drawString("Bonjour ! Tu t'es perdu ?...", 60, 100);
+				g.drawString("Oui, je cherchais les options", 350, 150);
+				g.drawString("Ahaha ! Sur un petit jeu comme celui là ?", 60, 200);
+				g.drawString("La naïveté des humains me fera toujours rire", 60, 220);
+				g.drawString("EH ! Les scripts ne sont pas censés mal parler !", 350, 270);
+				g.drawString("Tss...", 60, 320);
+				g.drawString("Je t'invite à regagner le menu en appuyant sur R", 60, 340);
+				g.drawString("Bisou ;)", 60, 450);
 				g.setColor(greenGray);
-				
 				g.drawString("Retour", 680, 545);
 				g.drawString("\"R\"", 693, 565);
 			break;
