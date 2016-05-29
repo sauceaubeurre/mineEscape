@@ -21,8 +21,9 @@ public class MainScreenGameState extends BasicGameState {
 	private Image background;
 	private StateBasedGame game;
 	
-	Color color = new Color(45, 50, 30);
-	Color color1 = new Color(0, 0, 0);
+	Color greenGray = new Color(45, 50, 30);
+	Color black = new Color(0, 0, 0);
+	Color lightGray = new Color(147, 147, 147);
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -39,7 +40,7 @@ public class MainScreenGameState extends BasicGameState {
 			// Menu principal
 			case 0:
 				background.draw(0, 0, container.getWidth(), container.getHeight());
-				g.setColor(color);
+				g.setColor(greenGray);
 				g.drawString("\"S\"", 137, 550);
 				g.drawString("\"O\"", 382, 550);
 				g.drawString("\"C\"", 612, 550);
@@ -47,18 +48,26 @@ public class MainScreenGameState extends BasicGameState {
 			
 			// Options
 			case 2:
-				g.setColor(color1);
+				g.setColor(black);
 				g.drawRect(0, 0, container.getWidth(), container.getHeight());
-				g.setColor(color);
+				g.setColor(greenGray);
+				
 				g.drawString("Retour", 680, 545);
 				g.drawString("\"R\"", 693, 565);
 			break;
 		
 			// Crédits
 			case 3:
-				g.setColor(color1);
+				g.setColor(black);
 				g.drawRect(0, 0, container.getWidth(), container.getHeight());
-				g.setColor(color);
+				g.setColor(lightGray);
+				g.drawString("Romain SEUSSE.......................................chef de projet", 60, 100);
+				g.drawString("Arnaud SOULAT.......................................responsable thé", 60, 150);
+				g.drawString("Alexandre NOURRAIN..................................responsable café", 60, 200);
+				g.drawString("Vincent HUET........................................responsable cookies", 60, 250);
+				g.drawString("Antoine TEBOULLE....................................responsable jus d'orange", 60, 300);
+				g.drawString("Jérémy ZORGUY.......................................responsable petits LU", 60, 350);
+				g.setColor(greenGray);
 				g.drawString("Retour", 680, 545);
 				g.drawString("\"R\"", 693, 565);
 			break;
