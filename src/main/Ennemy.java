@@ -51,7 +51,7 @@ public class Ennemy {
 
 	public void render(Graphics g) {
 		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0)], (int) x - 16, (int) y - 30);
-		}
+	}
 	
 	
 	

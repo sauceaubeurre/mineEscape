@@ -11,6 +11,7 @@ public class AStar {
 	private float endLastX;
 	private float endLastY;
 	private int pathIndex;
+	private int time = 0;
 	
     public void init(Map map, Player player, Ennemy ennemy){
     	pathFinder = new AStarPathFinder(map, 100, true);	//Initialise A* object
@@ -19,8 +20,12 @@ public class AStar {
     }
 
     public void update(Map map, Player player, Ennemy ennemy, int delta){
+    	time += delta;
     	
-		updatePath(map, player, ennemy);
+    	if(time - 1000 >= 0){
+    		updatePath(map, player, ennemy);
+    		time = 0;
+    	}
 		
 		//move the ennemy
 		if(path != null ){

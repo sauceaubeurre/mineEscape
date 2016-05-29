@@ -199,6 +199,7 @@ public class MapGameState extends BasicGameState {
 		this.aStar5.update(map, player, ennemy5, delta);
 		this.aStar6.update(map, player, ennemy6, delta);
 		this.aStar7.update(map, player, ennemy7, delta);
+		
 	}
 
 	@Override
