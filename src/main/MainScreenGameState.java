@@ -82,7 +82,7 @@ public class MainScreenGameState extends BasicGameState {
 				g.drawString("La naïveté des humains me fera toujours rire", 60, 220);
 				g.drawString("EH ! Les scripts ne sont pas censés mal parler !", 350, 270);
 				g.drawString("Tss...", 60, 320);
-				g.drawString("Je t'invite à regagner le menu en appuyant sur R", 60, 340);
+				g.drawString("Je t'invite à regagner le menu en appuyant sur B", 60, 340);
 				g.drawString("Bisou ;)", 60, 450);
 				g.setColor(greenGray);
 				g.drawString("Back", 690, 545);
