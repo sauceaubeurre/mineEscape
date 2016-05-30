@@ -105,7 +105,7 @@ public class Map implements TileBasedMap {
 		this.tiledMap.render(0, 0, 2);
 		this.tiledMap.render(0, 0, 3);
 		this.tiledMap.render(0, 0, 4);
-		this.tiledMap.render(0, 0, 7);
+		//this.tiledMap.render(0, 0, 7);
 	}
 
 	public void renderForeground() {

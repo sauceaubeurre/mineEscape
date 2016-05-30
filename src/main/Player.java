@@ -103,7 +103,7 @@ public class Player {
 	}
 	
 	public boolean isInHitbox(float x, float y, float deltaX, float deltaY){
-		if(this.x >= (x - deltaX) && this.x <= (x + deltaX) && this.y >= (y - deltaY) && this.y <= (y + deltaY)){
+		if(this.x >= (x - 2) && this.x <= (x + deltaX) && this.y >= (y - 2) && this.y <= (y + deltaY)){
 			return true;
 		}else{
 			return false;

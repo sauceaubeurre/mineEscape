@@ -9,27 +9,47 @@ public class Item {
 	private int time = 0;
 	private float hp = 4;
 	private float x, y;
+	private SpriteSheet spriteSheet;
 	
-	private Image[] image = new Image[5];
+	private Image[] imageRock = new Image[5];
+	private Image[] imageBridge = new Image[6];
 
 	public Item(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public void init() throws SlickException {
-		SpriteSheet spriteSheet = new SpriteSheet("sprites/rock.png", 32, 32);
-		image[4] = spriteSheet.getSprite(0, 0);
-		image[3] = spriteSheet.getSprite(1, 0);
-		image[2] = spriteSheet.getSprite(2, 0);
-		image[1] = spriteSheet.getSprite(3, 0);
-		image[0] = spriteSheet.getSprite(4, 0);
-		
-		hp = 4;
+	public void init(String itemType) throws SlickException {
+		if(itemType == "bridge"){
+			spriteSheet = new SpriteSheet("sprites/" + itemType + ".png", 224, 96);
+			
+			imageBridge[5] = spriteSheet.getSprite(5, 0);
+			imageBridge[4] = spriteSheet.getSprite(4, 0);
+			imageBridge[3] = spriteSheet.getSprite(3, 0);
+			imageBridge[2] = spriteSheet.getSprite(2, 0);
+			imageBridge[1] = spriteSheet.getSprite(1, 0);
+			imageBridge[0] = spriteSheet.getSprite(0, 0);
+			
+			hp = 5;
+		}else if(itemType == "rock"){
+			spriteSheet = new SpriteSheet("sprites/" + itemType + ".png", 32, 32);
+			
+			imageRock[4] = spriteSheet.getSprite(0, 0);
+			imageRock[3] = spriteSheet.getSprite(1, 0);
+			imageRock[2] = spriteSheet.getSprite(2, 0);
+			imageRock[1] = spriteSheet.getSprite(3, 0);
+			imageRock[0] = spriteSheet.getSprite(4, 0);
+			
+			hp = 4;
+		}
 	}
 
-	public void render(Graphics g, Player player) {
-		g.drawImage(image[(int)(hp)], x, y);
+	public void render(Graphics g, Player player, String itemType) {
+		if(itemType == "bridge"){
+			g.drawImage(imageBridge[(int)(hp)], x, y);
+		}else if(itemType == "rock"){
+			g.drawImage(imageRock[(int)(hp)], x, y);
+		}
 	}
 	
 	public void update(Player player, int delta){

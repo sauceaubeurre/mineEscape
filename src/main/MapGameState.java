@@ -49,6 +49,13 @@ public class MapGameState extends BasicGameState {
 	private Item rock19 = new Item(90*16, 58*16);
 	/* Instanciation des rochers cassables */
 	
+	/* Instanciation des ponts */
+	private Item pont1 = new Item(149*16, 100*16);
+	private Item pont2 = new Item(162*16, 68*16);
+	private Item pont3 = new Item(152*16, 35*16);
+	private Item pont4 = new Item(154*16, 54*16);
+	/* Instanciation des ponts */
+	
 	private TriggerController triggers = new TriggerController(map, player);
 	private Camera camera = new Camera(player);
 	private PlayerController controller = new PlayerController(player);
@@ -77,26 +84,31 @@ public class MapGameState extends BasicGameState {
 		this.ennemy6.init();
 		this.ennemy7.init();
 		
-		this.rock1.init();
-		this.rock2.init();
-		this.rock3.init();
-		this.rock4.init();
-		this.rock5.init();
-		this.rock6.init();
-		this.rock7.init();
-		this.rock8.init();
-		this.rock9.init();
-		this.rock10.init();
-		this.rock11.init();
-		this.rock12.init();
-		this.rock13.init();
-		this.rock14.init();
-		this.rock15.init();
-		this.rock16.init();
-		this.rock17.init();
-		this.rock18.init();
-		this.rock19.init();
-		this.rock20.init();
+		this.rock1.init("rock");
+		this.rock2.init("rock");
+		this.rock3.init("rock");
+		this.rock4.init("rock");
+		this.rock5.init("rock");
+		this.rock6.init("rock");
+		this.rock7.init("rock");
+		this.rock8.init("rock");
+		this.rock9.init("rock");
+		this.rock10.init("rock");
+		this.rock11.init("rock");
+		this.rock12.init("rock");
+		this.rock13.init("rock");
+		this.rock14.init("rock");
+		this.rock15.init("rock");
+		this.rock16.init("rock");
+		this.rock17.init("rock");
+		this.rock18.init("rock");
+		this.rock19.init("rock");
+		this.rock20.init("rock");
+		
+		this.pont1.init("bridge");
+		this.pont2.init("bridge");
+		this.pont3.init("bridge");
+		this.pont4.init("bridge");
 		
 		this.hud.init();
 		
@@ -118,26 +130,31 @@ public class MapGameState extends BasicGameState {
 		this.camera.place(container, g);
 		this.map.renderBackground();
 		
-		this.rock1.render(g, player);
-		this.rock2.render(g, player);
-		this.rock3.render(g, player);
-		this.rock4.render(g, player);
-		this.rock5.render(g, player);
-		this.rock6.render(g, player);
-		this.rock7.render(g, player);
-		this.rock8.render(g, player);
-		this.rock9.render(g, player);
-		this.rock10.render(g, player);
-		this.rock11.render(g, player);
-		this.rock12.render(g, player);
-		this.rock13.render(g, player);
-		this.rock14.render(g, player);
-		this.rock15.render(g, player);
-		this.rock16.render(g, player);
-		this.rock17.render(g, player);
-		this.rock18.render(g, player);
-		this.rock19.render(g, player);
-		this.rock20.render(g, player);
+		this.rock1.render(g, player, "rock");
+		this.rock2.render(g, player, "rock");
+		this.rock3.render(g, player, "rock");
+		this.rock4.render(g, player, "rock");
+		this.rock5.render(g, player, "rock");
+		this.rock6.render(g, player, "rock");
+		this.rock7.render(g, player, "rock");
+		this.rock8.render(g, player, "rock");
+		this.rock9.render(g, player, "rock");
+		this.rock10.render(g, player, "rock");
+		this.rock11.render(g, player, "rock");
+		this.rock12.render(g, player, "rock");
+		this.rock13.render(g, player, "rock");
+		this.rock14.render(g, player, "rock");
+		this.rock15.render(g, player, "rock");
+		this.rock16.render(g, player, "rock");
+		this.rock17.render(g, player, "rock");
+		this.rock18.render(g, player, "rock");
+		this.rock19.render(g, player, "rock");
+		this.rock20.render(g, player, "rock");
+		
+		this.pont1.render(g, player, "bridge");
+		this.pont2.render(g, player, "bridge");
+		this.pont3.render(g, player, "bridge");
+		this.pont4.render(g, player, "bridge");
 		
 		this.player.render(g);
 		
@@ -179,6 +196,11 @@ public class MapGameState extends BasicGameState {
 		this.rock18.update(player, delta);
 		this.rock19.update(player, delta);
 		this.rock20.update(player, delta);
+		
+		this.pont1.update(player, delta);
+		this.pont2.update(player, delta);
+		this.pont3.update(player, delta);
+		this.pont4.update(player, delta);
 		
 		this.player.update(delta);
 		
