@@ -15,9 +15,11 @@ public class Player {
 	private int direction = 2;
 	private float life = .5f;
 	private float stamina = 1f;
+	
 	private boolean onStair = false;
 	private boolean mining = false;
 	private static final float speed = .15f;
+	private int time = 0;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
@@ -75,6 +77,19 @@ public class Player {
 				this.y = futurY;
 			}
 		}
+		if(this.isMining() && time - 1000 > 0 ) {
+			if(stamina > 0){
+				stamina -= 0.1f;
+				time = 0;
+			}else{
+				setMining(false);
+			}
+		}
+		if(time - 5000 > 0){
+			stamina += 0.1f;
+			time = 0;
+		}
+		time+=delta;
 	}
 	
 	private void updateDirection() {
