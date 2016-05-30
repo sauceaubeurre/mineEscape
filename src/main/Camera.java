@@ -23,7 +23,7 @@ public class Camera {
 	}
 
 	public void update(GameContainer container) {
-<<<<<<< HEAD
+
 			int w = container.getWidth() / 10;
 			if (this.player.getX() > this.xCamera + w) {
 				this.xCamera = this.player.getX() - w;
@@ -36,7 +36,6 @@ public class Camera {
 			} else if (this.player.getY() < this.yCamera - h) {
 				this.yCamera = this.player.getY() + h;
 			}
-=======
 		if(player.getX() < 400){
 			xCamera = 400;
 		}else if(player.getX() > 2800){
@@ -53,20 +52,8 @@ public class Camera {
 			yCamera = player.getY();	
 		}
 		
-		System.out.println("x = "+xCamera+";y = "+yCamera);
 		
-		/*int w = container.getWidth() / 10;
-		if (this.player.getX() > this.xCamera + w) {
-			this.xCamera = this.player.getX() - w;
-		} else if (this.player.getX() < this.xCamera - w) {
-			this.xCamera = this.player.getX() + w;
-		}
-		int h = container.getHeight() / 10;
-		if (this.player.getY() > this.yCamera + h) {
-			this.yCamera = this.player.getY() - h;
-		} else if (this.player.getY() < this.yCamera - h) {
-			this.yCamera = this.player.getY() + h;
-		}*/
->>>>>>> romain
+	
+
 	}
 }
