@@ -54,7 +54,7 @@ public class PlayerController implements KeyListener, ControllerListener {
 		case Input.KEY_Q:	this.player.setDx(-1);this.player.setMining(false);break;
 		case Input.KEY_S:	this.player.setDy(1);this.player.setMining(false);break;
 		case Input.KEY_D:	this.player.setDx(1);this.player.setMining(false);break;
-		case Input.KEY_E:	this.player.setMining(true);this.player.stopMoving();break;
+		case Input.KEY_E:	if(player.getStamina() > 0){this.player.setMining(true);this.player.stopMoving();}break;
 		}
 	}
 
@@ -115,7 +115,7 @@ public class PlayerController implements KeyListener, ControllerListener {
 
 	@Override
 	public void controllerButtonPressed(int controller, int button) {
-		if(button == 1){
+		if(button == 1 && player.getStamina() > 0){
 			this.player.stopMoving();
 			this.player.setMining(true);
 		}else if(button == 2){
