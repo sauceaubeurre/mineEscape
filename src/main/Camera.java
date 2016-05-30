@@ -28,7 +28,6 @@ public class Camera {
 	}
 
 	public void update(GameContainer container) {
-		if((this.xCamera - 200) >= 0){
 			int w = container.getWidth() / 10;
 			if (this.player.getX() > this.xCamera + w) {
 				this.xCamera = this.player.getX() - w;
@@ -41,6 +40,5 @@ public class Camera {
 			} else if (this.player.getY() < this.yCamera - h) {
 				this.yCamera = this.player.getY() + h;
 			}
-		}
 	}
 }
