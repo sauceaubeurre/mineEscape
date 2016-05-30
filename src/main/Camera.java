@@ -28,18 +28,19 @@ public class Camera {
 	}
 
 	public void update(GameContainer container) {
-		int w = container.getWidth() / 10;
-		if (this.player.getX() > this.xCamera + w) {
-			this.xCamera = this.player.getX() - w;
-		} else if (this.player.getX() < this.xCamera - w) {
-			this.xCamera = this.player.getX() + w;
-		}
-		int h = container.getHeight() / 10;
-		if (this.player.getY() > this.yCamera + h) {
-			this.yCamera = this.player.getY() - h;
-		} else if (this.player.getY() < this.yCamera - h) {
-			this.yCamera = this.player.getY() + h;
+		if((this.xCamera - 200) >= 0){
+			int w = container.getWidth() / 10;
+			if (this.player.getX() > this.xCamera + w) {
+				this.xCamera = this.player.getX() - w;
+			} else if (this.player.getX() < this.xCamera - w) {
+				this.xCamera = this.player.getX() + w;
+			}
+			int h = container.getHeight() / 10;
+			if (this.player.getY() > this.yCamera + h) {
+				this.yCamera = this.player.getY() - h;
+			} else if (this.player.getY() < this.yCamera - h) {
+				this.yCamera = this.player.getY() + h;
+			}
 		}
 	}
-
 }
