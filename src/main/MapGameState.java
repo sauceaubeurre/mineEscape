@@ -53,7 +53,7 @@ public class MapGameState extends BasicGameState {
 	private Item pont1 = new Item(149*16, 100*16);
 	private Item pont2 = new Item(162*16, 68*16);
 	private Item pont3 = new Item(152*16, 35*16);
-	private Item pont4 = new Item(154*16, 54*16);
+	private Item pont4 = new Item(154*16, 4*16);
 	/* Instanciation des ponts */
 	
 	private TriggerController triggers = new TriggerController(map, player);
@@ -71,8 +71,8 @@ public class MapGameState extends BasicGameState {
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.container = container;
-		Music background = new Music("sound/lost-in-the-meadows.ogg");
-		background.loop();
+		//Music background = new Music("sound/diggy-hole.ogg");
+		//background.loop();
 		this.map.init();
 		this.player.init();
 		
@@ -197,10 +197,10 @@ public class MapGameState extends BasicGameState {
 		this.rock19.update(player, delta);
 		this.rock20.update(player, delta);
 		
-		this.pont1.update(player, delta);
-		this.pont2.update(player, delta);
-		this.pont3.update(player, delta);
-		this.pont4.update(player, delta);
+		//this.pont1.update(player, delta);
+		//this.pont2.update(player, delta);
+		//this.pont3.update(player, delta);
+		//this.pont4.update(player, delta);
 		
 		this.player.update(delta);
 		
@@ -214,13 +214,13 @@ public class MapGameState extends BasicGameState {
 		
 		this.camera.update(container);
 		
-		this.aStar1.update(map, player, ennemy1, delta);
+		/*this.aStar1.update(map, player, ennemy1, delta);
 		this.aStar2.update(map, player, ennemy2, delta);
 		this.aStar3.update(map, player, ennemy3, delta);
 		this.aStar4.update(map, player, ennemy4, delta);
 		this.aStar5.update(map, player, ennemy5, delta);
 		this.aStar6.update(map, player, ennemy6, delta);
-		this.aStar7.update(map, player, ennemy7, delta);
+		this.aStar7.update(map, player, ennemy7, delta);*/
 		
 	}
 

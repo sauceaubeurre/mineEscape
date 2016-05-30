@@ -23,12 +23,12 @@ public class Item {
 		if(itemType == "bridge"){
 			spriteSheet = new SpriteSheet("sprites/" + itemType + ".png", 224, 96);
 			
-			imageBridge[5] = spriteSheet.getSprite(5, 0);
-			imageBridge[4] = spriteSheet.getSprite(4, 0);
-			imageBridge[3] = spriteSheet.getSprite(3, 0);
-			imageBridge[2] = spriteSheet.getSprite(2, 0);
-			imageBridge[1] = spriteSheet.getSprite(1, 0);
-			imageBridge[0] = spriteSheet.getSprite(0, 0);
+			imageBridge[5] = spriteSheet.getSprite(0, 0);
+			imageBridge[4] = spriteSheet.getSprite(1, 0);
+			imageBridge[3] = spriteSheet.getSprite(2, 0);
+			imageBridge[2] = spriteSheet.getSprite(3, 0);
+			imageBridge[1] = spriteSheet.getSprite(4, 0);
+			imageBridge[0] = spriteSheet.getSprite(5, 0);
 			
 			hp = 5;
 		}else if(itemType == "rock"){

@@ -4,6 +4,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -19,6 +20,7 @@ public class MainScreenGameState extends BasicGameState {
 	public static final int ID = 1;
 	private int menuState = 0; // 0 Menu, 1 Game, 2 Options, 3 Crédits
 	private Image background;
+	private Music music;
 	private StateBasedGame game;
 	
 	Color greenGray = new Color(45, 50, 30);
@@ -29,6 +31,7 @@ public class MainScreenGameState extends BasicGameState {
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.game = game;
 		this.background = new Image("background/menu.png");
+		music = new Music("sound/diggy-hole.ogg");
 	}
 
 	/**
@@ -93,6 +96,7 @@ public class MainScreenGameState extends BasicGameState {
 	public void keyReleased(int key, char c) {
 		if(menuState == 0 && (c == 's' || c == 'S')){
 			game.enterState(MapGameState.ID);
+			music.loop();
 			menuState = 1;
 		}else if(menuState == 0 && (c == 'o' || c == 'O')){
 			menuState = 2;
