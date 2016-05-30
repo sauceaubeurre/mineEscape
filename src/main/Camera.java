@@ -6,12 +6,7 @@ package main;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-/**
- * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
- * 
- * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
- *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y-
- */
+
 public class Camera {
 
 	private Player player;
@@ -28,7 +23,25 @@ public class Camera {
 	}
 
 	public void update(GameContainer container) {
-		int w = container.getWidth() / 10;
+		if(player.getX() < 400){
+			xCamera = 400;
+		}else if(player.getX() > 2800){
+			xCamera = 2800;
+		}else{
+			xCamera = player.getX();	
+		}
+		
+		if(player.getY() < 300){
+			yCamera = 300;
+		}else if(player.getY() > 1620){
+			yCamera = 1620;
+		}else{
+			yCamera = player.getY();	
+		}
+		
+		System.out.println("x = "+xCamera+";y = "+yCamera);
+		
+		/*int w = container.getWidth() / 10;
 		if (this.player.getX() > this.xCamera + w) {
 			this.xCamera = this.player.getX() - w;
 		} else if (this.player.getX() < this.xCamera - w) {
@@ -39,7 +52,7 @@ public class Camera {
 			this.yCamera = this.player.getY() - h;
 		} else if (this.player.getY() < this.yCamera - h) {
 			this.yCamera = this.player.getY() + h;
-		}
+		}*/
 	}
 
 }
