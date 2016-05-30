@@ -75,7 +75,7 @@ public class Ennemy {
 			}
 		}
 		
-		if(player.isInHitbox(x, y, 32, 64) == true ) {
+		if(player.isInHitbox(x, y, 40, 70) == true ) {
 			stopMoving();
 			hiting = true;
 			

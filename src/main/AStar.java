@@ -22,7 +22,7 @@ public class AStar {
     public void update(Map map, Player player, Ennemy ennemy, int delta){
     	time += delta;
     	
-    	if(time - 1000 >= 0){
+    	if(time - 700 >= 0){
     		updatePath(map, player, ennemy);
     		time = 0;
     	}
