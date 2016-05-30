@@ -11,9 +11,10 @@ import org.newdawn.slick.SpriteSheet;
 public class Player {
 
 	private float dx = 0, dy = 0;
-	//private float x = 320, y = 488;
 	private float x = 11*16, y = 107*16;
 	private int direction = 2;
+	private float life = .5f;
+	private float stamina = 1f;
 	private boolean onStair = false;
 	private boolean mining = false;
 	private static final float speed = .15f;
@@ -24,6 +25,7 @@ public class Player {
 	public Player(Map map) {
 		this.map = map;
 	}
+
 
 	public void init() throws SlickException {
 		SpriteSheet spriteSheet = new SpriteSheet("sprites/character2.png", 32, 32);
@@ -39,6 +41,13 @@ public class Player {
 	    this.animations[9] = loadAnimation(spriteSheet, 3, 6, 1);
 	    this.animations[10] = loadAnimation(spriteSheet, 3, 6, 0);
 	    this.animations[11] = loadAnimation(spriteSheet, 3, 6, 2);
+	    
+	    
+	   x = 11*16;
+	   y = 107*16;
+	   direction = 2;
+	   life = .5f;
+		stamina = 1f;
 	  }
 
 	private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
@@ -93,8 +102,8 @@ public class Player {
 		return futurY;
 	}
 	
-	public boolean isInHitbox(float x, float y){
-		if(this.x >= x && this.x <= (x + 32) && this.y >= y && this.y <= (y + 32)){
+	public boolean isInHitbox(float x, float y, float deltaX, float deltaY){
+		if(this.x >= (x - deltaX) && this.x <= (x + deltaX) && this.y >= (y - deltaY) && this.y <= (y + deltaY)){
 			return true;
 		}else{
 			return false;
@@ -223,5 +232,21 @@ public class Player {
 
 	public float getDy() {
 		return dy;
+	}
+	
+	public float getLife() {
+		return life;
+	}
+
+	public void setLife(float life) {
+		this.life = life;
+	}
+
+	public float getStamina() {
+		return stamina;
+	}
+
+	public void setStamina(float stamina) {
+		this.stamina = stamina;
 	}
 }

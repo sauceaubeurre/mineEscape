@@ -24,6 +24,8 @@ public class Item {
 		image[2] = spriteSheet.getSprite(2, 0);
 		image[1] = spriteSheet.getSprite(3, 0);
 		image[0] = spriteSheet.getSprite(4, 0);
+		
+		hp = 4;
 	}
 
 	public void render(Graphics g, Player player) {
@@ -31,10 +33,8 @@ public class Item {
 	}
 	
 	public void update(Player player, int delta){
-		if(player.isInHitbox(x, y) == true){
-			//System.out.println(time);
+		if(player.isInHitbox(x, y, 32, 32) == true){
 			if((time - 1000) > 0 && hp != 0 && player.isMining() == true){
-				//System.out.println("hit rock");
 				hp--;
 				time = 0;
 			}else if(player.isMoving() == true && hp != 0){

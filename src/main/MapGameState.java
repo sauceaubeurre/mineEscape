@@ -17,13 +17,13 @@ public class MapGameState extends BasicGameState {
 	private Map map = new Map();
 	private Player player = new Player(map);
 	/* Instanciation des ennemis */
-	private Ennemy ennemy1 = new Ennemy(map, 109*16, 94*16);
-	private Ennemy ennemy2 = new Ennemy(map, 145*16, 72*16);
-	private Ennemy ennemy3 = new Ennemy(map, 163*16, 102*16);
-	private Ennemy ennemy4 = new Ennemy(map, 86*16, 40*16);
-	private Ennemy ennemy5 = new Ennemy(map, 80*16, 16*16);
-	private Ennemy ennemy6 = new Ennemy(map, 45*16, 15*16);
-	private Ennemy ennemy7 = new Ennemy(map, 140*16, 10*16);
+	private Ennemy ennemy1 = new Ennemy(player, map, 109*16, 94*16);
+	private Ennemy ennemy2 = new Ennemy(player, map, 145*16, 72*16);
+	private Ennemy ennemy3 = new Ennemy(player, map, 163*16, 102*16);
+	private Ennemy ennemy4 = new Ennemy(player, map, 86*16, 40*16);
+	private Ennemy ennemy5 = new Ennemy(player, map, 80*16, 16*16);
+	private Ennemy ennemy6 = new Ennemy(player, map, 45*16, 15*16);
+	private Ennemy ennemy7 = new Ennemy(player, map, 140*16, 10*16);
 	/* Instanciation des ennemis */
 	
 	/* Instanciation des rochers cassables */
@@ -52,7 +52,7 @@ public class MapGameState extends BasicGameState {
 	private TriggerController triggers = new TriggerController(map, player);
 	private Camera camera = new Camera(player);
 	private PlayerController controller = new PlayerController(player);
-	private Hud hud = new Hud();
+	private Hud hud = new Hud(player);
 	private AStar aStar1 = new AStar();
 	private AStar aStar2 = new AStar();
 	private AStar aStar3 = new AStar();
@@ -64,8 +64,8 @@ public class MapGameState extends BasicGameState {
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.container = container;
-		//Music background = new Music("sound/lost-in-the-meadows.ogg");
-		//background.loop();
+		Music background = new Music("sound/lost-in-the-meadows.ogg");
+		background.loop();
 		this.map.init();
 		this.player.init();
 		

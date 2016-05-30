@@ -8,18 +8,24 @@ import org.newdawn.slick.SpriteSheet;
 public class Ennemy {
 	
 	private float dx = 0, dy = 0;
-	private float x , y;
+	private float x , y, startX, startY;
 	private int direction = 2;
-	private static final float speed = .05f;
+	private static final float speed = .12f;
 	private boolean onStair;
+	private Player player;
+	private int time = 0;
+	private boolean hiting = false;
 	
 	private Animation[] animations = new Animation[12];
 	private Map map;
 
-	public Ennemy(Map map, float x, float y) {
+	public Ennemy(Player player, Map map, float x, float y) {
+		this.player = player;
 		this.map = map;
 		this.x = x;
 		this.y = y;
+		startX = x;
+		startY = y;
 	}
 	public void init() throws SlickException {
 		SpriteSheet spriteSheet = new SpriteSheet("sprites/character2.png", 32, 32);
@@ -50,7 +56,7 @@ public class Ennemy {
 	}
 
 	public void render(Graphics g) {
-		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0)], (int) x - 16, (int) y - 30);
+		g.drawAnimation(animations[direction + (isMoving() ? 4 : 0) + (hiting ? 8 : 0)  ], (int) x - 16, (int) y - 30);
 	}
 	
 	
@@ -68,6 +74,29 @@ public class Ennemy {
 				this.y = futurY;
 			}
 		}
+		
+		if(player.isInHitbox(x, y, 32, 64) == true ) {
+			stopMoving();
+			hiting = true;
+			
+		System.out.println(time);
+			if( player.getLife() > 0){
+				if((time - 1000) > 0){
+				System.out.println("hit player");
+				player.setLife(player.getLife() - 0.1f);;
+				time = 0;
+				}
+			
+			}
+			else{
+				EndGameState.enterState(MainScreenGameState.ID);
+			}
+		}
+		else{
+			hiting = false;
+		}
+		
+		time += delta;
 	}
 	
 	private float getFuturX(int delta) {
@@ -125,9 +154,11 @@ public class Ennemy {
 		//set ennemy Dx
 				if(x > px + 5){
 					dx = -1;
+					setHiting(false);
 				}
 				else if(x < px - 5){
 					dx = 1;
+					setHiting(false);
 				}
 				else{
 					dx = 0;
@@ -136,9 +167,11 @@ public class Ennemy {
 				//set ennemy Dy
 				if(y > py + 5){
 					dy = -1;
+					setHiting(false);
 				}
 				else if(y < py - 5){
 					dy = 1;
+					setHiting(false);
 				}
 				else{
 					dy = 0;
@@ -166,5 +199,20 @@ public class Ennemy {
 	public static float getSpeed() {
 		return speed;
 	}
+	public boolean isHiting() {
+		return hiting;
+	}
+	public void setHiting(boolean hiting) {
+		this.hiting = hiting;
+	}
+	public float getStartX() {
+		return startX;
+	}
+	public float getStartY() {
+		return startY;
+	}
+	
+	
+	
 	
 }

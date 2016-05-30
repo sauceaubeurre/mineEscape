@@ -27,6 +27,12 @@ public class Hud {
 	private static final Color XP_COLOR = new Color(0, 255, 0);
 
 	private Image playerbars;
+	private Player player;
+	
+	
+	public Hud(Player player) {
+		this.player = player;
+	}
 
 	public void init() throws SlickException {
 		this.playerbars = new Image("hud/player-bar.png");
@@ -35,11 +41,11 @@ public class Hud {
 	public void render(Graphics g) {
 		g.resetTransform();
 		g.setColor(LIFE_COLOR);
-		g.fillRect(BAR_X, LIFE_BAR_Y, .9f * BAR_WIDTH, BAR_HEIGHT);
+		g.fillRect(BAR_X, LIFE_BAR_Y, player.getLife() * 2 * BAR_WIDTH, BAR_HEIGHT);
 		g.setColor(MANA_COLOR);
-		g.fillRect(BAR_X, MANA_BAR_Y, .8f * BAR_WIDTH, BAR_HEIGHT);
+		g.fillRect(BAR_X, MANA_BAR_Y, player.getStamina() * BAR_WIDTH, BAR_HEIGHT);
 		g.setColor(XP_COLOR);
-		g.fillRect(BAR_X, XP_BAR_Y, .2f * BAR_WIDTH, BAR_HEIGHT);
+		g.fillRect(BAR_X, XP_BAR_Y, 1f * BAR_WIDTH, BAR_HEIGHT);
 		g.drawImage(playerbars, P_BAR_X, P_BAR_Y);
 	}
 
