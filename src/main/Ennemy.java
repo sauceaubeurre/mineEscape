@@ -10,7 +10,7 @@ public class Ennemy {
 	private float dx = 0, dy = 0;
 	private float x , y, startX, startY;
 	private int direction = 2;
-	private static final float speed = .12f;
+	private static final float speed = .14f;
 	private boolean onStair;
 	private Player player;
 	private int time = 0;

@@ -45,7 +45,7 @@ public class Hud {
 		g.setColor(MANA_COLOR);
 		g.fillRect(BAR_X, MANA_BAR_Y, player.getStamina() * BAR_WIDTH, BAR_HEIGHT);
 		g.setColor(XP_COLOR);
-		g.fillRect(BAR_X, XP_BAR_Y, 1f * BAR_WIDTH, BAR_HEIGHT);
+		g.fillRect(BAR_X, XP_BAR_Y, player.getSprint() * BAR_WIDTH, BAR_HEIGHT);
 		g.drawImage(playerbars, P_BAR_X, P_BAR_Y);
 	}
 

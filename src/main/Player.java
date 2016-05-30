@@ -15,12 +15,15 @@ public class Player {
 	private int direction = 2;
 	private float life = .5f;
 	private float stamina = 1f;
+	private float sprint = 1f;
 	
 	private boolean onStair = false;
 	private boolean mining = false;
-	private static final float speed = .15f;
+	private float speed = .15f;
 	private int time = 0;
 	
+
+
 	private Animation[] animations = new Animation[12];
 	private Map map;
 
@@ -85,10 +88,24 @@ public class Player {
 				setMining(false);
 			}
 		}
-		if(time - 5000 > 0){
+		if(time - 3000 > 0 && stamina < 1f){
 			stamina += 0.1f;
 			time = 0;
 		}
+		
+		if(speed > 0.15f && time - 250 > 0 ) {
+			if( sprint > 0){
+				sprint -= 0.1f;
+				time = 0;
+			}else{
+				speed = 0.15f;
+			}
+		}
+		if(time - 3000 > 0 && sprint < 1f){
+			sprint += 0.1f;
+			time = 0;
+		}
+		
 		time+=delta;
 	}
 	
@@ -264,4 +281,22 @@ public class Player {
 	public void setStamina(float stamina) {
 		this.stamina = stamina;
 	}
+	
+
+
+	public void setSpeed(float speed) {
+		this.speed = speed;
+	}
+
+
+	public float getSprint() {
+		return sprint;
+	}
+
+
+	public void setSprint(float sprint) {
+		this.sprint = sprint;
+	}
+	
+	
 }

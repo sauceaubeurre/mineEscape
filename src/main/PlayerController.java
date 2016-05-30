@@ -55,6 +55,7 @@ public class PlayerController implements KeyListener, ControllerListener {
 		case Input.KEY_S:	this.player.setDy(1);this.player.setMining(false);break;
 		case Input.KEY_D:	this.player.setDx(1);this.player.setMining(false);break;
 		case Input.KEY_E:	if(player.getStamina() > 0){this.player.setMining(true);this.player.stopMoving();}break;
+		case Input.KEY_SPACE: if(player.getSprint() > 0){player.setSpeed(player.getSpeed() + 0.10f);}break;
 		}
 	}
 
@@ -66,6 +67,7 @@ public class PlayerController implements KeyListener, ControllerListener {
 		case Input.KEY_Q:if(player.getDx() == -1){player.setDx(0);} break;
 		case Input.KEY_D:if(player.getDx() == 1){player.setDx(0);} break;
 		case Input.KEY_E:	player.setMining(false);
+		case Input.KEY_SPACE: player.setSpeed(player.getSpeed() - 0.05f);
 		}
 	}
 	
