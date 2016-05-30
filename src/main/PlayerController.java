@@ -4,12 +4,7 @@ import org.newdawn.slick.ControllerListener;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 
-/**
- * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
- * 
- * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
- *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y-
- */
+
 public class PlayerController implements KeyListener, ControllerListener {
 
 	private Player player;
@@ -120,9 +115,8 @@ public class PlayerController implements KeyListener, ControllerListener {
 		if(button == 1 && player.getStamina() > 0){
 			this.player.stopMoving();
 			this.player.setMining(true);
-		}else if(button == 2){
-			player.setX(player.getX() + 100 * player.getDx());
-			player.setY(player.getY() + 100 * player.getDy());
+		}else if(button == 2 && player.getSprint() > 0){
+			player.setSpeed(player.getSpeed() + 0.06f);
 		}
 		
 	}
