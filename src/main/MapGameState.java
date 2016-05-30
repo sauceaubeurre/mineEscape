@@ -214,13 +214,13 @@ public class MapGameState extends BasicGameState {
 		
 		this.camera.update(container);
 		
-		/*this.aStar1.update(map, player, ennemy1, delta);
+		this.aStar1.update(map, player, ennemy1, delta);
 		this.aStar2.update(map, player, ennemy2, delta);
 		this.aStar3.update(map, player, ennemy3, delta);
 		this.aStar4.update(map, player, ennemy4, delta);
 		this.aStar5.update(map, player, ennemy5, delta);
 		this.aStar6.update(map, player, ennemy6, delta);
-		this.aStar7.update(map, player, ennemy7, delta);*/
+		this.aStar7.update(map, player, ennemy7, delta);
 		
 	}
 
